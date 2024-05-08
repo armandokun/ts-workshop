@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import { useCallback, useEffect, useState } from "react";
 
 import UserDetails from "../components/UserDetails";
@@ -13,9 +12,7 @@ const SORT_OPTIONS = [
   { value: "desc", title: "Id ⬇️" },
 ];
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+const App = () => {
   const [userList, setUserList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -88,4 +85,6 @@ export default function Home() {
       <div>{sortedUsers.map(renderUser)}</div>
     </>
   );
-}
+};
+
+export default App;
